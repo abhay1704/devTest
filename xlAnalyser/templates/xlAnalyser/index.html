@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>xlAnalyser - Medius</title>
+    <link rel="stylesheet" href={% static '/css/style.css' %}>
+    <link rel="stylesheet" href={% static '/css/pagination.css' %}>
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+  </head>
+  <body>
+    <h1>Excel File Analyser</h1>
+    <p><span style="color: var(--primary); letter-spacing: 1.5px; font-family: sans-serif;">xlAnalyser</span> is a tool for analyzing Excel files. It is a part of the Medius Assignment.</p>
+
+    <form id="upload-form" action="{% url 'analyse' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="file" id="xlfile" maxlength="1" accept=".csv, .xlsx, .xls" />
+    <button type="submit" id="analyse">Analyse</button>
+    </form>
+
+    <div id="TableContainer" class="listing-container"></div>
+    <div class="page-footer hidden">
+    <button><a href="" id="downloadBtn">Download Excel</a></button>
+  <div class="pagination">
+    <button
+      class="pagination__button pagination__button-first btn--enabled"
+      data-page="1"
+    >
+      «
+    </button>
+    <button
+      class="pagination__button pagination__button-previous"
+      data-page="0"
+    >
+      ‹ 
+    </button>
+    <span class="pagination__button-specific">
+      <!-- Pagination buttons will be dynamically inserted here -->
+    </span>
+    <button
+      class="pagination__button pagination__button-next btn--enabled"
+      data-page="2"
+    >
+       ›
+    </button>
+    <button
+      class="pagination__button pagination__button-last btn--enabled"
+      data-page="11"
+    >
+       »
+    </button>
+  </div>
+</div>
+        <script src={% static '/js/pagination.js' %}></script>
+        <script src={% static '/js/script.js' %}></script>
+  </body>
+</html>
