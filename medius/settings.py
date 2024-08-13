@@ -55,7 +55,7 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            BASE_DIR / "xlAnalyser/templates/xlAnalyser"
+            os.path.join(BASE_DIR, "xlAnalyser/templates/xlAnalyser")
         ],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -119,7 +119,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = [
-    BASE_DIR / "xlAnalyser/static/xlAnalyser"
+    os.path.join(BASE_DIR, "xlAnalyser/static/xlAnalyser")
 ]
 
 # Default primary key field type
