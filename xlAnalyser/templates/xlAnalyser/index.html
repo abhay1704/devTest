@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>xlAnalyser - Medius</title>
-    <link rel="stylesheet" href={% static '/css/style.css' %}>
-    <link rel="stylesheet" href={% static '/css/pagination.css' %}>
+    <link rel="stylesheet" href={% static 'css/style.css' %}>
+    <link rel="stylesheet" href={% static 'css/pagination.css' %}>
     <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
   </head>
   <body>
@@ -24,7 +24,7 @@
     <button><a href="#" id="downloadBtn">Download Excel</a></button>
   <div class="pagination">
     <button
-      class="pagination__button pagination__button-first btn--enabled"
+      class="pagination__button pagination__button-first"
       data-page="1"
     >
       «
@@ -52,7 +52,7 @@
     </button>
   </div>
 </div>
-        <script src={% static '/js/pagination.js' %}></script>
-        <script src={% static '/js/script.js' %}></script>
+        <script src={% static 'js/pagination.js' %}></script>
+        <script src={% static 'js/script.js' %}></script>
   </body>
 </html>

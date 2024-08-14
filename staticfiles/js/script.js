@@ -42,6 +42,8 @@ const applyStyle = (table) => {
 
 const renderTable = (data) => {
   const tableContainer = document.getElementById("TableContainer");
+  tableContainer.innerHTML = '<div id="spinner1"></div>';
+
   const reader = new FileReader();
 
   reader.onload = (e) => {
@@ -91,8 +93,6 @@ function getCsrfToken() {
 }
 
 function downloadAndRenderExcel(url, options) {
-  const tableContainer = document.getElementById("TableContainer");
-  tableContainer.innerHTML = '<div id="spinner1"></div>';
   fetch(url, options)
     .then((response) => response.blob())
     .then((blob) => {
@@ -101,11 +101,9 @@ function downloadAndRenderExcel(url, options) {
       downloadBtn.href = URL.createObjectURL(blob);
       downloadBtn.download = "output.xlsx";
     })
-    .catch((error) => {
-      tableContainer.innerHTML =
-        "<p class='error'>Error downloading or rendering Excel file.</p>";
-      console.error("Error downloading or rendering Excel file:", error);
-    });
+    .catch((error) =>
+      console.error("Error downloading or rendering Excel file:", error)
+    );
 }
 
 analyseBtn.addEventListener("click", (e) => {

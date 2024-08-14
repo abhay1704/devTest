@@ -121,12 +121,6 @@ button {
   border: none;
 }
 
-.error {
-  color: var(--error);
-  font-size: 0.8rem;
-  margin-top: 5px;
-}
-
 #analyse:hover,
 #downloadBtn:hover {
   background-color: var(--primary);

@@ -6,7 +6,7 @@ const Pagination = (pageActive, setPageActive, nPages, setPage) => {
     const page = parseInt(target.dataset.page, 10);
     setPage(page);
 
-    setPageActive(page, nPages, setPage);
+    setPageActive(page, nPages);
     renderPaginationButtons(currentPage);
   };
 
@@ -30,7 +30,7 @@ const Pagination = (pageActive, setPageActive, nPages, setPage) => {
     }
   };
 
-  document.querySelector(".pagination__button-last").dataset.page = nPages - 1;
+  document.querySelector(".pagination__button-last").dataset.page = nPages;
   document
     .querySelector(".pagination")
     .addEventListener("click", handlePaginationClick);
@@ -39,7 +39,7 @@ const Pagination = (pageActive, setPageActive, nPages, setPage) => {
   renderPaginationButtons(pageActive);
 };
 
-const setPageActive = (newPage, nPages, setPage) => {
+const setPageActive = (newPage, nPages) => {
   currentPage = newPage;
 
   document.querySelector(".pagination__button-previous").dataset.page =
@@ -65,7 +65,7 @@ const setPageActive = (newPage, nPages, setPage) => {
       .classList.add("btn--enabled");
   }
 
-  if (currentPage >= nPages - 1) {
+  if (currentPage === nPages - 1) {
     document
       .querySelector(".pagination__button-next")
       .classList.remove("btn--enabled");
@@ -83,5 +83,5 @@ const setPageActive = (newPage, nPages, setPage) => {
       .classList.add("btn--enabled");
   }
 
-  Pagination(currentPage, setPageActive, nPages, setPage);
+  Pagination(currentPage, setPageActive, nPages);
 };

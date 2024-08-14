@@ -1,0 +1,91 @@
+/* Page Footer Styles */
+.page-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: fit-content;
+  margin-top: 10px;
+  width: 100%;
+  position: relative; /* Allows for absolute positioning of the delete button */
+}
+
+/* Pagination Container Styles */
+.pagination {
+  display: inline-flex;
+  justify-content: center;
+  height: 30px;
+  gap: 10px;
+}
+
+/* Pagination Span (Individual Page Numbers) Styles */
+.pagination span {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Pagination Button Styles */
+.pagination__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--outline);
+  padding: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: var(--surface-container);
+  color: var(--on-surface-container);
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Delete Button Styles */
+.delete_selected-btn {
+  border: none;
+  outline: none;
+  background-color: var(--error-container);
+  color: var(--on-error-container);
+  padding: 7px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  position: absolute;
+  left: 20px;
+}
+
+/* Hover Effects */
+.delete_selected-btn:hover,
+.btn--enabled:hover {
+  filter: brightness(85%); /* Universal hover effect for buttons */
+}
+
+/* Button Enabled State */
+.btn--enabled {
+  background-color: var(--primary-fixed);
+  color: var(--on-primary-fixed);
+}
+
+/* Button Active State */
+.btn--active {
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  font-weight: 500;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .page-footer {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin-top: 30px;
+  }
+
+  .delete_selected-btn {
+    position: static;
+  }
+}
