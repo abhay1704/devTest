@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-z38sk76r@0@b4n0f!(4c3329$y$)$zjo4m_xifxty16t$x@gr9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['devtest.up.railway.app']
+ALLOWED_HOSTS = ['devtest.up.railway.app', '127.0.0.1']
 
 
 # Application definition
@@ -118,7 +118,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = "static/xlAnalyser/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "xlAnalyser/static/xlAnalyser")
 ]
