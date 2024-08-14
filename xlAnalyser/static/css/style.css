@@ -139,6 +139,7 @@ button {
   width: 100%;
   overflow-x: auto;
   border-radius: 5px;
+  min-height: 30vh;
 }
 
 thead td.listing-table__header {
@@ -236,5 +237,28 @@ thead td.listing-table__header {
 
   .listing-container {
     overflow-x: auto;
+  }
+}
+
+#spinner1 {
+  height: 50px;
+  width: 50px;
+  border: solid 5px var(--primary);
+  text-align: center;
+  justify-content: center;
+  border-bottom: solid 5px white;
+  margin: auto;
+  position: relative;
+  top: calc(50% - 25px);
+  left: calc(50% - 25px);
+  border-radius: 50%;
+  display: inline-block;
+  animation: spin 1s infinite linear 0s;
+  overflow: hidden;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }

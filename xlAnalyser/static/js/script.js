@@ -64,7 +64,6 @@ const renderTable = (data) => {
     tableContainer.innerHTML = "";
     const tableHeader = Array.from(styledTable.querySelectorAll("tr"))[0];
     tableData = Array.from(styledTable.querySelectorAll("tr")).slice(1);
-    console.log(tableData);
     tableContainer.innerHTML = `<table class='listing-table'>
                                     <thead></thead>
                                     <tbody></tbody>

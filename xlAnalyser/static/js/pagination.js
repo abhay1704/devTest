@@ -13,7 +13,6 @@ const Pagination = (pageActive, setPageActive, nPages, setPage) => {
   const renderPaginationButtons = (newPage) => {
     const container = document.querySelector(".pagination__button-specific");
     container.innerHTML = "";
-    console.log(newPage);
 
     for (
       let i = Math.max(1, newPage - 10 + 1);
