@@ -110,20 +110,22 @@ function downloadAndRenderExcel(url, options) {
 
 analyseBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  if (xlfile.files.length === 0) {
+  const xlfileInput = document.getElementById("xlfile");
+  if (xlfileInput.files.length === 0) {
     alert("Please select an Excel file to upload.");
     return;
   }
 
-  const file = xlfile.files[0];
+  const file = xlfileInput.files[0];
   const formData = new FormData();
   formData.append("xlfile", file);
   const options = {
     method: "POST",
     headers: {
-      "X-CSRFToken": getCsrfToken(), // Add CSRF token to the request headers
+      "X-CSRFToken": getCsrfToken(),
     },
     body: formData,
   };
+
   downloadAndRenderExcel("analyse/", options);
 });

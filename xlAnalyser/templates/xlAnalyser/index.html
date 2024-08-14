@@ -13,11 +13,12 @@
     <h1>Excel File Analyser</h1>
     <p><span style="color: var(--primary); letter-spacing: 1.5px; font-family: sans-serif;">xlAnalyser</span> is a tool for analyzing Excel files. It is a part of the Medius Assignment.</p>
 
-    <form id="upload-form" action="{% url 'analyse' %}" method="post" enctype="multipart/form-data">
+<form id="upload-form" action="{% url 'analyse' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <input type="file" name="file" id="xlfile" maxlength="1" accept=".csv, .xlsx, .xls" />
+    <input type="file" name="xlfile" id="xlfile" maxlength="1" accept=".csv, .xlsx, .xls" />
     <button type="submit" id="analyse">Analyse</button>
-    </form>
+</form>
+
 
     <div id="TableContainer" class="listing-container"></div>
     <div class="page-footer hidden">
